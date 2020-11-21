@@ -1,0 +1,2 @@
+Miniconda3-latest-Linux-ppc64le.sh
+bazel_bin_ppc64le_3.1.0
