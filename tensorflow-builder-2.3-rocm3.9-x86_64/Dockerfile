@@ -1,4 +1,4 @@
-FROM gcr.io/ecp-e4s/ubuntu18.04-rocm-x86_64:3.9
+FROM us.gcr.io/ecp-e4s/ubuntu18.04-rocm-x86_64:3.9
 
 RUN apt update -y \
  && apt install curl gnupg \

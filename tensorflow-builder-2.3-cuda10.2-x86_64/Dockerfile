@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:experimental
 
-FROM gcr.io/ecp-e4s/ubuntu18.04-cuda-x86_64:10.2-cudnn7-tensorrt7-nccl2
+FROM us.gcr.io/ecp-e4s/ubuntu18.04-cuda-x86_64:10.2-cudnn7-tensorrt7-nccl2
 
 RUN apt update -y \
  && apt install -y curl gnupg \

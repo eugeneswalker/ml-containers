@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:experimental
 
-FROM gcr.io/ecp-e4s/ubuntu18.04-cuda-ppc64le:10.2-cudnn7-tensorrt7-nccl2
+FROM us.gcr.io/ecp-e4s/ubuntu18.04-cuda-ppc64le:10.2-cudnn7-tensorrt7-nccl2
 
 RUN --mount=type=bind,source=bazel_bin_ppc64le_3.1.0,target=bazel_bin_ppc64le_3.1.0 \
     cp bazel_bin_ppc64le_3.1.0 /usr/bin/bazel \
