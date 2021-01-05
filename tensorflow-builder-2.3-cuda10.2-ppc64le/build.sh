@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-REGISTRY=${REGISTRY:-us.us.gcr.io/ecp-e4s}
+REGISTRY=${REGISTRY:-us.gcr.io/ecp-e4s}
 
 DOCKER_CLI_EXPERIMENTAL=enabled \
 DOCKER_BUILDKIT=1 \
