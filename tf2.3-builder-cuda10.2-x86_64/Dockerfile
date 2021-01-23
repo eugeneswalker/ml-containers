@@ -36,7 +36,7 @@ RUN eval "$(/usr/local/miniconda3/bin/conda shell.bash hook)" \
  && cd /
 
 RUN git clone https://github.com/tensorflow/tensorflow.git /tensorflow \
- && (cd /tensorflow && git checkout v2.3.1)
+ && (cd /tensorflow && git checkout v2.3.1 && rm -rf .git)
 
 WORKDIR /tensorflow
 
