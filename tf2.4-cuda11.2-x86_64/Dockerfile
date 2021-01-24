@@ -26,10 +26,10 @@ RUN eval "$(/usr/local/miniconda3/bin/conda shell.bash hook)" \
  && rm -rf /root/.cache \
  && cd /
 
-RUN --mount=type=bind,source=tensorflow-2.4.0-cp36-cp36m-linux_x86_64.whl,target=tensorflow-2.4.0-cp36-cp36m-linux_x86_64.whl \
+RUN --mount=type=bind,source=tensorflow-2.4.1-cp36-cp36m-linux_x86_64.whl,target=tensorflow-2.4.1-cp36-cp36m-linux_x86_64.whl \
     eval "$(/usr/local/miniconda3/bin/conda shell.bash hook)" \
  && conda activate py36 \
- && pip install ./tensorflow-2.4.0-cp36-cp36m-linux_x86_64.whl \
+ && pip install ./tensorflow-2.4.1-cp36-cp36m-linux_x86_64.whl \
  && rm -rf /root/.cache
 
 RUN echo conda activate py36 >> /root/.bashrc \
