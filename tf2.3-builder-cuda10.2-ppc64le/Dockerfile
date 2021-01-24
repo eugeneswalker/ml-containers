@@ -33,7 +33,8 @@ RUN eval "$(/usr/local/miniconda3/bin/conda shell.bash hook)" \
 RUN git clone https://github.com/tensorflow/tensorflow.git /tensorflow \
  && (cd /tensorflow && git checkout v2.3.1)
 
-WORKDIR /tensorflow
+COPY do-tf-configure.sh /tensorflow
+COPY do-tf-build.sh /tensorflow
 
 RUN apt update -y \
  && apt install -y openjdk-11-jdk-headless \
@@ -42,3 +43,5 @@ RUN apt update -y \
 RUN echo conda activate py36 >> /root/.bashrc
 
 RUN rm -f /*.deb /*.run /*.tar.gz /*.whl
+
+WORKDIR /tensorflow
