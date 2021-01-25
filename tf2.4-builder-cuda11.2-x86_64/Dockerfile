@@ -42,7 +42,7 @@ COPY /do-tf-configure.sh /tensorflow/
 COPY /do-tf-build.sh /tensorflow/
 
 RUN echo conda activate py36 >> /root/.bashrc \
- && rm -f /*.deb /*.run /*.tar.gz /*.whl
+ && rm -f /*.deb /*.run /*.tar.gz /*.whl /Miniconda3-latest-Linux-x86_64.sh
 
 WORKDIR /tensorflow
 
