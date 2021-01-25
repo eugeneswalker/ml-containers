@@ -3,3 +3,4 @@ libcudnn7_7.6.5.32-1+cuda10.2_amd64.deb
 libcudnn7-dev_7.6.5.32-1+cuda10.2_amd64.deb
 nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
 TensorRT-7.0.0.11.Ubuntu-18.04.x86_64-gnu.cuda-10.2.cudnn7.6.tar.gz
+7fa2af80.pub

@@ -1,10 +1,6 @@
 # syntax=docker/dockerfile:experimental
 
-FROM ecpe4s/ubuntu18.04-runner-ppc64le:2020-09-01
-
-RUN apt update -y \
- && apt upgrade -y \
- && apt clean
+FROM us.gcr.io/ecp-e4s/ubuntu18.04-runner-ppc64le:2021-01-01
 
 RUN --mount=type=bind,source=cuda_10.2.89_440.33.01_linux_ppc64le.run,target=cuda_10.2.89_440.33.01_linux_ppc64le.run \
     mkdir -p /cuda-10.2.89/targets/ppc64le-linux/include /cuda-10.2.89/src \
@@ -30,11 +26,13 @@ RUN --mount=type=bind,source=TensorRT-7.0.0.11.Ubuntu-18.04.ppc64le-gnu.cuda-10.
  && pip install graphsurgeon/graphsurgeon-0.4.1-py2.py3-none-any.whl \
  && cd /
 
+COPY 7fa2af80.pub /
+
 RUN --mount=type=bind,source=nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_ppc64el.deb,target=nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_ppc64el.deb \
-    apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/ppc64el/7fa2af80.pub \
+    apt-key add 7fa2af80.pub \
  && dpkg -i nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_ppc64el.deb \
  && apt update -y \
  && apt install libnccl2=2.7.8-1+cuda10.2 libnccl-dev=2.7.8-1+cuda10.2 \
  && apt clean
 
-RUN rm -f /*.deb /*.run /*.tar.gz /*.whl
+RUN rm -f /*.deb /*.run /*.tar.gz /*.whl /*.pub
