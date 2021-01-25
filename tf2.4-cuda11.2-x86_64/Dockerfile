@@ -7,9 +7,7 @@ RUN --mount=type=bind,source=Miniconda3-latest-Linux-x86_64.sh,target=Miniconda3
 
 RUN eval "$(/usr/local/miniconda3/bin/conda shell.bash hook)" \
  && conda init \
- && conda create -n py36 python=3.6
-
-RUN eval "$(/usr/local/miniconda3/bin/conda shell.bash hook)" \
+ && conda create -n py36 python=3.6 \
  && conda activate py36 \
  && pip install -U pip \
  && pip install -U six wheel setuptools mock 'future>=0.17.1' \

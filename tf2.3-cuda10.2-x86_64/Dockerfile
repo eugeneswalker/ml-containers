@@ -30,6 +30,5 @@ RUN --mount=type=bind,source=tensorflow-2.3.1-cp36-cp36m-linux_x86_64.whl,target
  && pip install ./tensorflow-2.3.1-cp36-cp36m-linux_x86_64.whl \
  && rm -rf /root/.cache
 
-RUN echo conda activate py36 >> /root/.bashrc
-
-RUN rm -f /*.deb /*.run /*.tar.gz /*.whl
+RUN echo conda activate py36 >> /root/.bashrc \
+ && rm -f /*.deb /*.run /*.tar.gz /*.whl
