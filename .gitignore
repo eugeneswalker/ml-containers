@@ -1,0 +1,6 @@
+*.whl
+*.tar.gz
+*.tgz
+*.run
+*.deb
+Miniconda3-latest-Linux-ppc64le.sh
